@@ -10,6 +10,9 @@ struct Menu: View {
                 NavigationLink(destination: MapKitExample()) {
                     Text("MapKit example")
                 }
+                NavigationLink(destination: TextViewExample()) {
+                    Text("TextView example")
+                }
             }.navigationBarTitle("Available examples")
         }
     }
