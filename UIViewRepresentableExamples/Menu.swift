@@ -7,6 +7,9 @@ struct Menu: View {
                 NavigationLink(destination: HTMLRenderingWebViewExample()) {
                     Text("HTML rendering WebView")
                 }
+                NavigationLink(destination: MapKitExample()) {
+                    Text("MapKit example")
+                }
             }.navigationBarTitle("Available examples")
         }
     }
