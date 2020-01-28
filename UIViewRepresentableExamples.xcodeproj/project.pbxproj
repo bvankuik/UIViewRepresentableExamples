@@ -13,6 +13,9 @@
 		896635F223E0281600143527 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 896635F123E0281600143527 /* Assets.xcassets */; };
 		896635F523E0281600143527 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 896635F423E0281600143527 /* Preview Assets.xcassets */; };
 		896635F823E0281600143527 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 896635F623E0281600143527 /* LaunchScreen.storyboard */; };
+		8966360023E0298600143527 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896635FF23E0298600143527 /* Menu.swift */; };
+		8966360323E0359200143527 /* HTMLRenderingWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8966360223E0359200143527 /* HTMLRenderingWebView.swift */; };
+		8966360523E037C500143527 /* HTMLRenderingWebViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8966360423E037C500143527 /* HTMLRenderingWebViewExample.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		896635F423E0281600143527 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		896635F723E0281600143527 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		896635F923E0281600143527 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		896635FF23E0298600143527 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		8966360223E0359200143527 /* HTMLRenderingWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLRenderingWebView.swift; sourceTree = "<group>"; };
+		8966360423E037C500143527 /* HTMLRenderingWebViewExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLRenderingWebViewExample.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +62,11 @@
 		896635EA23E0281500143527 /* UIViewRepresentableExamples */ = {
 			isa = PBXGroup;
 			children = (
+				8966360123E0357700143527 /* HTMLRenderingWebView */,
 				896635EB23E0281500143527 /* AppDelegate.swift */,
 				896635ED23E0281500143527 /* SceneDelegate.swift */,
 				896635EF23E0281500143527 /* ContentView.swift */,
+				896635FF23E0298600143527 /* Menu.swift */,
 				896635F123E0281600143527 /* Assets.xcassets */,
 				896635F623E0281600143527 /* LaunchScreen.storyboard */,
 				896635F923E0281600143527 /* Info.plist */,
@@ -73,6 +81,15 @@
 				896635F423E0281600143527 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8966360123E0357700143527 /* HTMLRenderingWebView */ = {
+			isa = PBXGroup;
+			children = (
+				8966360223E0359200143527 /* HTMLRenderingWebView.swift */,
+				8966360423E037C500143527 /* HTMLRenderingWebViewExample.swift */,
+			);
+			path = HTMLRenderingWebView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,8 +163,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8966360523E037C500143527 /* HTMLRenderingWebViewExample.swift in Sources */,
+				8966360323E0359200143527 /* HTMLRenderingWebView.swift in Sources */,
 				896635EC23E0281500143527 /* AppDelegate.swift in Sources */,
 				896635EE23E0281500143527 /* SceneDelegate.swift in Sources */,
+				8966360023E0298600143527 /* Menu.swift in Sources */,
 				896635F023E0281500143527 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
