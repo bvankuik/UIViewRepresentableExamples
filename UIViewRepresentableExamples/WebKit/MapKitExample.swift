@@ -11,14 +11,14 @@ struct MapKitExample: View {
     static let amsterdam = CLLocationCoordinate2D(latitude: 52.37403,
                                                   longitude: 4.88969)
     @State private var centerCoordinate = Self.amsterdam
-    @State var resetCoordinate:  CLLocationCoordinate2D? = nil
+    @State private var action: MapView.Action = .idle
 
     var body: some View {
         VStack {
-            MapView(centerCoordinate: self.$centerCoordinate, resetCoordinate: self.$resetCoordinate)
+            MapView(centerCoordinate: self.$centerCoordinate, action: self.$action)
             Text("Centered on: " + self.centerCoordinate.description)
             Button("Reset") {
-                self.resetCoordinate = Self.amsterdam
+                self.action = .reset(coordinate: Self.amsterdam)
             }
         }
         .navigationBarTitle("MapKit Example")

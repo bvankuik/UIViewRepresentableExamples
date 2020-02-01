@@ -2,18 +2,33 @@ import SwiftUI
 import MapKit
 
 struct MapView: UIViewRepresentable {
+    enum Action {
+        case idle
+        case reset(coordinate: CLLocationCoordinate2D)
+    }
+    
     @Binding var centerCoordinate: CLLocationCoordinate2D
-    @Binding var resetCoordinate:  CLLocationCoordinate2D?
+    @Binding var action: Action
 
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView()
         mapView.delegate = context.coordinator
+        mapView.centerCoordinate = self.centerCoordinate
         return mapView
     }
     
     func updateUIView(_ uiView: MKMapView, context: Context) {
-        if let newCoordinate = self.resetCoordinate {
+        switch action {
+        case .idle:
+            break
+        case .reset(let newCoordinate):
+            uiView.delegate = nil
             uiView.centerCoordinate = newCoordinate
+            DispatchQueue.main.async {
+                self.centerCoordinate = newCoordinate
+                self.action = .idle
+                uiView.delegate = context.coordinator
+            }
         }
     }
     
@@ -25,11 +40,7 @@ struct MapView: UIViewRepresentable {
         var parent: MapView
         
         func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
-            if parent.centerCoordinate.latitude != mapView.centerCoordinate.latitude &&
-                parent.centerCoordinate.longitude != mapView.centerCoordinate.longitude {
-                
-                parent.centerCoordinate = mapView.centerCoordinate
-            }
+            parent.centerCoordinate = mapView.centerCoordinate
         }
         
         init(_ parent: MapView) {
@@ -42,6 +53,6 @@ struct MapView_Previews: PreviewProvider {
     static let amsterdamCoordinate = CLLocationCoordinate2D(latitude: 52.37403, longitude: 4.88969)
     
     static var previews: some View {
-        MapView(centerCoordinate: .constant(amsterdamCoordinate), resetCoordinate: .constant(nil))
+        MapView(centerCoordinate: .constant(amsterdamCoordinate), action: .constant(.idle))
     }
 }
