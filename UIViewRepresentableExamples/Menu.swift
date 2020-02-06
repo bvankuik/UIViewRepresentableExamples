@@ -13,6 +13,9 @@ struct Menu: View {
                 NavigationLink(destination: TextViewExample()) {
                     Text("TextView example")
                 }
+                NavigationLink(destination: LegacyScrollViewExample()) {
+                    Text("LegacyScrollView example")
+                }
             }.navigationBarTitle("Available examples")
         }
     }

@@ -1,16 +1,23 @@
-//
-//  LegacyScrollViewExample.swift
-//  UIViewRepresentableExamples
-//
-//  Created by bartvk on 04/02/2020.
-//  Copyright © 2020 DutchVirtual. All rights reserved.
-//
-
 import SwiftUI
 
 struct LegacyScrollViewExample: View {
+    let content: AnyView = AnyView(
+        Text(Constants.lipsum.joined(separator: "\n\n"))
+    )
+    
+    @State private var action = LegacyScrollView.Action.idle
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 0) {
+            LegacyScrollView(content: self.content, axis: .vertical, action: self.$action)
+                .padding(20)
+                .background(Color.gray)
+            Spacer()
+            Button("Set offset") {
+                self.action = LegacyScrollView.Action.offset(x: 0, y: 200, animated: true)
+            }.padding()
+        }
+        
     }
 }
 
