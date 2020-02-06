@@ -1,14 +1,14 @@
 import SwiftUI
 
-struct LegacyScrollView : UIViewRepresentable {
-    enum Action {
-        case idle
-        case offset(x: CGFloat, y: CGFloat, animated: Bool)
-    }
-    
-    let content: AnyView
+enum LegacyScrollViewAction {
+    case idle
+    case offset(x: CGFloat, y: CGFloat, animated: Bool)
+}
+
+struct LegacyScrollView<Content: View>: UIViewRepresentable {
     let axis: Axis
-    @Binding var action: Action
+    @Binding var action: LegacyScrollViewAction
+    let content: Content
 
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -58,21 +58,32 @@ struct LegacyScrollView : UIViewRepresentable {
     }
 
     class Coordinator: NSObject {
-        var control: LegacyScrollView
+        let legacyScrollView: LegacyScrollView
 
-        init(_ control: LegacyScrollView) {
-            self.control = control
+        init(_ legacyScrollView: LegacyScrollView) {
+            self.legacyScrollView = legacyScrollView
         }
+    }
+    
+    init(axis: Axis, @ViewBuilder content: () -> Content) {
+        self.axis = .vertical
+        self._action = Binding.constant(LegacyScrollViewAction.idle)
+        self.content = content()
+    }
+    
+    init(axis: Axis, action: Binding<LegacyScrollViewAction>, @ViewBuilder content: () -> Content) {
+        self.axis = axis
+        self._action = action
+        self.content = content()
     }
 }
 
 struct LegacyScrollView_Previews: PreviewProvider {
-    static let content: AnyView = AnyView(
-        Text(Constants.lipsum.joined(separator: "\n\n"))
-    )
-    @State static var action = LegacyScrollView.Action.offset(x: 100, y: 0, animated: false)
-    
+    @State static var action = LegacyScrollViewAction.offset(x: 100, y: 0, animated: false)
+
     static var previews: some View {
-        LegacyScrollView(content: content, axis: .horizontal, action: self.$action)
+        LegacyScrollView(axis: .horizontal, action: self.$action) {
+            Text(Constants.lipsum.joined(separator: "\n\n"))
+        }
     }
 }
