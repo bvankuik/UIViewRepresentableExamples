@@ -4,6 +4,7 @@ import WebKit
 struct HTMLRenderingWebView: UIViewRepresentable {
     @Binding var htmlString: String
     @Binding var baseURL: URL?
+    let meta = "<meta name=\"viewport\" content=\"initial-scale=1.0\" />"
     
     func makeUIView(context: Context) -> WKWebView {
         let webView = WKWebView()
@@ -14,7 +15,7 @@ struct HTMLRenderingWebView: UIViewRepresentable {
         if self.htmlString != context.coordinator.lastLoadedHTML {
             print("Updating HTML")
             context.coordinator.lastLoadedHTML = self.htmlString
-            uiView.loadHTMLString(self.htmlString, baseURL: self.baseURL)
+            uiView.loadHTMLString(self.meta + self.htmlString, baseURL: self.baseURL)
         }
     }
     
