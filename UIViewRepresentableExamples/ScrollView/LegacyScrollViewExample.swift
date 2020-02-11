@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct LegacyScrollViewExample: View {
-    @State private var action = LegacyScrollViewAction.idle
+    @State private var action = LegacyScrollView.Action.idle
     
     var body: some View {
         VStack(spacing: 0) {
@@ -12,9 +12,9 @@ struct LegacyScrollViewExample: View {
             .background(Color.gray)
             Spacer()
             Button("Set offset") {
-                self.action = LegacyScrollViewAction.offset(x: 0, y: 200, animated: true)
+                self.action = LegacyScrollView.Action.offset(x: 0, y: 200, animated: true)
             }.padding()
-        }
+        }.navigationBarTitle("ScrollView")
     }
 }
 
