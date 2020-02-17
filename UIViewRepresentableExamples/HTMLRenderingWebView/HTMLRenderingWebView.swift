@@ -13,7 +13,6 @@ struct HTMLRenderingWebView: UIViewRepresentable {
     
     func updateUIView(_ uiView: WKWebView, context: Context) {
         if self.htmlString != context.coordinator.lastLoadedHTML {
-            print("Updating HTML")
             context.coordinator.lastLoadedHTML = self.htmlString
             uiView.loadHTMLString(self.meta + self.htmlString, baseURL: self.baseURL)
         }
