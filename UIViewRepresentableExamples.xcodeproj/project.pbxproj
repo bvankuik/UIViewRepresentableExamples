@@ -78,7 +78,7 @@
 			children = (
 				8975582C23E9985400622733 /* ScrollView */,
 				89F328DF23E0802A00B2CB1A /* TextView */,
-				89F328DA23E07A7000B2CB1A /* WebKit */,
+				89F328DA23E07A7000B2CB1A /* MapKit */,
 				8966360123E0357700143527 /* HTMLRenderingWebView */,
 				896635EB23E0281500143527 /* AppDelegate.swift */,
 				896635ED23E0281500143527 /* SceneDelegate.swift */,
@@ -119,13 +119,13 @@
 			path = ScrollView;
 			sourceTree = "<group>";
 		};
-		89F328DA23E07A7000B2CB1A /* WebKit */ = {
+		89F328DA23E07A7000B2CB1A /* MapKit */ = {
 			isa = PBXGroup;
 			children = (
 				89F328DB23E07A7C00B2CB1A /* MapKitExample.swift */,
 				89F328DD23E07E7E00B2CB1A /* MapView.swift */,
 			);
-			path = WebKit;
+			path = MapKit;
 			sourceTree = "<group>";
 		};
 		89F328DF23E0802A00B2CB1A /* TextView */ = {
