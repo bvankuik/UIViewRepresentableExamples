@@ -21,6 +21,7 @@
 		8975583423E9B01100622733 /* LegacyScrollViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8975583323E9B01100622733 /* LegacyScrollViewExample.swift */; };
 		89CAE64223FB1AD100017997 /* SVGViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CAE64123FB1AD100017997 /* SVGViewExample.swift */; };
 		89CAE64423FB1B2A00017997 /* SVGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CAE64323FB1B2A00017997 /* SVGView.swift */; };
+		89CAE64823FBC55000017997 /* SVGExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CAE64723FBC55000017997 /* SVGExamples.swift */; };
 		89F328DC23E07A7C00B2CB1A /* MapKitExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F328DB23E07A7C00B2CB1A /* MapKitExample.swift */; };
 		89F328DE23E07E7E00B2CB1A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F328DD23E07E7E00B2CB1A /* MapView.swift */; };
 		89F328E123E0804B00B2CB1A /* TextViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F328E023E0804B00B2CB1A /* TextViewExample.swift */; };
@@ -44,6 +45,7 @@
 		8975583323E9B01100622733 /* LegacyScrollViewExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyScrollViewExample.swift; sourceTree = "<group>"; };
 		89CAE64123FB1AD100017997 /* SVGViewExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGViewExample.swift; sourceTree = "<group>"; };
 		89CAE64323FB1B2A00017997 /* SVGView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGView.swift; sourceTree = "<group>"; };
+		89CAE64723FBC55000017997 /* SVGExamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGExamples.swift; sourceTree = "<group>"; };
 		89F328DB23E07A7C00B2CB1A /* MapKitExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitExample.swift; sourceTree = "<group>"; };
 		89F328DD23E07E7E00B2CB1A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		89F328E023E0804B00B2CB1A /* TextViewExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewExample.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			children = (
 				89CAE64123FB1AD100017997 /* SVGViewExample.swift */,
 				89CAE64323FB1B2A00017997 /* SVGView.swift */,
+				89CAE64723FBC55000017997 /* SVGExamples.swift */,
 			);
 			path = SVGView;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				896635EE23E0281500143527 /* SceneDelegate.swift in Sources */,
 				8966360023E0298600143527 /* Menu.swift in Sources */,
 				896635F023E0281500143527 /* ContentView.swift in Sources */,
+				89CAE64823FBC55000017997 /* SVGExamples.swift in Sources */,
 				89F328E123E0804B00B2CB1A /* TextViewExample.swift in Sources */,
 				89F328E323E0808600B2CB1A /* TextView.swift in Sources */,
 				8975583023E9A2D500622733 /* LegacyScrollView.swift in Sources */,

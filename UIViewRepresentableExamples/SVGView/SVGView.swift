@@ -19,7 +19,6 @@ struct SVGView: UIViewRepresentable {
         <style>
         html, body { margin:0; padding:0; overflow:hidden }
         svg { position:fixed; top:0; left:0; height:100%; width:100% }
-        div.wrapper { filter: grayscale(100%) }
         </style>
         <body>
         """
@@ -57,7 +56,7 @@ struct SVGView: UIViewRepresentable {
     
     init(svgString: Binding<String>) {
         let preferences = WKPreferences()
-        preferences.javaScriptEnabled = false // Not strictly necessary but why not
+        preferences.javaScriptEnabled = false // JavaScript is not needed
         let config = WKWebViewConfiguration()
         config.preferences = preferences
         
@@ -72,23 +71,9 @@ struct SVGView: UIViewRepresentable {
 }
 
 struct SVGView_Previews: PreviewProvider {
-    static let svgString =
-    """
-    <svg height="150" width="400">
-      <defs>
-        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
-          <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
-        </linearGradient>
-      </defs>
-      <ellipse cx="200" cy="70" rx="85" ry="55" fill="url(#grad1)" />
-      <text fill="#ffffff" font-size="45" font-family="Verdana" x="150" y="86">SVG</text>
-      Sorry, your browser does not support inline SVG.
-    </svg>
-    """
-
     static var previews: some View {
-        SVGView(svgString: .constant(Self.svgString))
+        SVGView(svgString: .constant(SVGExamples.smallExample))
+//            .frame(width: 200, height: 100)
                     .previewDevice("iPhone SE")
     }
 }

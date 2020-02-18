@@ -9,21 +9,21 @@
 import SwiftUI
 
 struct SVGViewExample: View {
-    var body: some View {
-        SVGView(svgString: .constant(stringFromSVGAsset()))
-            .border(Color.gray, width: 3)
-    }
+    @State private var svgString = ""
     
-    func stringFromSVGAsset() -> String {
-        // GNU Affero General Public License
-        // https://commons.wikimedia.org/wiki/File:Ghostscript_Tiger.svg
-        
-        guard let asset = NSDataAsset(name: "Ghostscript_Tiger") else {
-            fatalError("Couldn't find SVG in assets")
+    var body: some View {
+        VStack {
+            SVGView(svgString: self.$svgString)
+                .border(Color.gray, width: 3)
+            HStack(spacing: 20) {
+                Button("Show tiger image") {
+                    self.svgString = SVGExamples.tiger
+                }.padding()
+                Button("Show text in oval") {
+                    self.svgString = SVGExamples.smallExample
+                }.padding()
+            }
         }
-        
-        let data = asset.data
-        return String(data: data, encoding: .utf8) ?? ""
     }
 }
 
@@ -31,5 +31,6 @@ struct SVGViewExample_Previews: PreviewProvider {
     static var previews: some View {
         // This won't show anything, you'll have to run a live preview
         SVGViewExample()
+        .previewDevice("iPhone SE")
     }
 }
