@@ -1,11 +1,3 @@
-//
-//  SVGViewExample.swift
-//  UIViewRepresentableExamples
-//
-//  Created by bartvk on 17/02/2020.
-//  Copyright © 2020 DutchVirtual. All rights reserved.
-//
-
 import SwiftUI
 
 struct SVGViewExample: View {
