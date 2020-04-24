@@ -18,12 +18,32 @@ struct LegacyScrollView: UIViewRepresentable {
         return self.uiScrollView
     }
     
-    init<Content: View>(axis: Axis, content: Content) {
+    func updateUIView(_ uiView: UIScrollView, context: Context) {
+        switch self.action {
+        case .offset(let x, let y, let animated):
+            uiView.setContentOffset(CGPoint(x: x, y: y), animated: animated)
+            DispatchQueue.main.async {
+                self.action = .idle
+            }
+        default:
+            break
+        }
+    }
+
+    class Coordinator: NSObject {
+        let legacyScrollView: LegacyScrollView
+
+        init(_ legacyScrollView: LegacyScrollView) {
+            self.legacyScrollView = legacyScrollView
+        }
+    }
+
+    init<Content: View>(axis: Axis, action: Binding<Action>, @ViewBuilder content: () -> Content) {
         self.axis = axis
-        self._action = Binding.constant(Action.idle)
+        self._action = action
         self.uiScrollView = UIScrollView()
 
-        let hosting = UIHostingController(rootView: content)
+        let hosting = UIHostingController(rootView: content())
         hosting.view.translatesAutoresizingMaskIntoConstraints = false
         
         self.uiScrollView.addSubview(hosting.view)
@@ -49,31 +69,6 @@ struct LegacyScrollView: UIViewRepresentable {
         }
         self.uiScrollView.addConstraints(constraints)
     }
-
-    func updateUIView(_ uiView: UIScrollView, context: Context) {
-        switch self.action {
-        case .offset(let x, let y, let animated):
-            uiView.setContentOffset(CGPoint(x: x, y: y), animated: animated)
-            DispatchQueue.main.async {
-                self.action = .idle
-            }
-        default:
-            break
-        }
-    }
-
-    class Coordinator: NSObject {
-        let legacyScrollView: LegacyScrollView
-
-        init(_ legacyScrollView: LegacyScrollView) {
-            self.legacyScrollView = legacyScrollView
-        }
-    }
-
-    init<Content: View>(axis: Axis, action: Binding<Action>, @ViewBuilder content: () -> Content) {
-        self.init(axis: axis, content: content())
-        self._action = action
-    }
 }
 
 struct LegacyScrollView_Previews: PreviewProvider {
@@ -81,7 +76,7 @@ struct LegacyScrollView_Previews: PreviewProvider {
 
     static var previews: some View {
         LegacyScrollView(axis: .horizontal, action: self.$action) {
-            Text(Constants.lipsum.joined(separator: "\n\n"))
+            Text(Utils.lipsum.joined(separator: "\n\n"))
         }
     }
 }
