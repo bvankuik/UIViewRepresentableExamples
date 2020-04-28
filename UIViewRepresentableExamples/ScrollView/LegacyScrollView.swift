@@ -76,7 +76,7 @@ struct LegacyScrollView_Previews: PreviewProvider {
 
     static var previews: some View {
         LegacyScrollView(axis: .horizontal, action: self.$action) {
-            Text(Utils.lipsum.joined(separator: "\n\n"))
+            Text(Constants.lipsum.joined(separator: "\n\n"))
         }
     }
 }
