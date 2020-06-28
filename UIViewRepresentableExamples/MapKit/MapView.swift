@@ -5,6 +5,7 @@ struct MapView: UIViewRepresentable {
     enum Action {
         case idle
         case reset(coordinate: CLLocationCoordinate2D)
+        case changeType(mapType: MKMapType)
     }
     
     @Binding var centerCoordinate: CLLocationCoordinate2D
@@ -29,6 +30,8 @@ struct MapView: UIViewRepresentable {
                 self.action = .idle
                 uiView.delegate = context.coordinator
             }
+        case .changeType(let mapType):
+            uiView.mapType = mapType
         }
     }
     
