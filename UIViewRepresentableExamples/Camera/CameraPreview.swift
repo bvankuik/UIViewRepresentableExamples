@@ -1,19 +1,16 @@
 import SwiftUI
 
-struct CameraPreview: UIViewRepresentable {
-    func makeUIView(context: Context) -> CameraPreviewWrapperView {
-        let view = CameraPreviewWrapperView()
-        return view
+// If you would use UIViewRepresentable, and you'd navigate to this view on iPad in landscape, then the orientation
+// would be wrong. Thus, we wrap the view in UIViewControllerRepresentable.
+
+struct CameraPreview: UIViewControllerRepresentable {
+    func makeUIViewController(context: UIViewControllerRepresentableContext<CameraPreview>) -> UIViewController {
+        let viewController = UIViewController()
+        viewController.view = CameraPreviewWrapperView()
+        return viewController
     }
     
-    func updateUIView(_ uiView: CameraPreviewWrapperView, context: Context) {
-    }
-    
-    func makeCoordinator() -> Coordinator {
-        Coordinator()
-    }
-    
-    class Coordinator: NSObject {
+    func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<CameraPreview>) {
     }
 }
 
