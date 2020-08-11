@@ -32,6 +32,9 @@ struct Menu: View {
                 NavigationLink(destination: SVGViewExample()) {
                     Text("SVG Example")
                 }
+                NavigationLink(destination: CameraExample()) {
+                    Text("Camera Example")
+                }
             }
             .navigationBarTitle("Available examples")
 

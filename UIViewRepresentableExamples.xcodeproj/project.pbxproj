@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8924D7DE2458A0B00010C4FE /* CameraExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8924D7DD2458A0B00010C4FE /* CameraExample.swift */; };
+		8924D7E02458A3920010C4FE /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8924D7DF2458A3920010C4FE /* CameraPreview.swift */; };
+		8924D7E22458A4CD0010C4FE /* CameraPreviewWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8924D7E12458A4CD0010C4FE /* CameraPreviewWrapperView.swift */; };
+		8924D7E42458A8480010C4FE /* DeviceCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8924D7E32458A8480010C4FE /* DeviceCaptureView.swift */; };
 		896635EC23E0281500143527 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896635EB23E0281500143527 /* AppDelegate.swift */; };
 		896635EE23E0281500143527 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896635ED23E0281500143527 /* SceneDelegate.swift */; };
 		896635F023E0281500143527 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896635EF23E0281500143527 /* ContentView.swift */; };
@@ -29,6 +33,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8924D7DD2458A0B00010C4FE /* CameraExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraExample.swift; sourceTree = "<group>"; };
+		8924D7DF2458A3920010C4FE /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
+		8924D7E12458A4CD0010C4FE /* CameraPreviewWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewWrapperView.swift; sourceTree = "<group>"; };
+		8924D7E32458A8480010C4FE /* DeviceCaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCaptureView.swift; sourceTree = "<group>"; };
 		896635E823E0281500143527 /* UIViewRepresentableExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIViewRepresentableExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		896635EB23E0281500143527 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		896635ED23E0281500143527 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +71,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8924D7DC2458A09F0010C4FE /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				8924D7DD2458A0B00010C4FE /* CameraExample.swift */,
+				8924D7DF2458A3920010C4FE /* CameraPreview.swift */,
+				8924D7E12458A4CD0010C4FE /* CameraPreviewWrapperView.swift */,
+				8924D7E32458A8480010C4FE /* DeviceCaptureView.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
 		896635DF23E0281500143527 = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +101,7 @@
 		896635EA23E0281500143527 /* UIViewRepresentableExamples */ = {
 			isa = PBXGroup;
 			children = (
+				8924D7DC2458A09F0010C4FE /* Camera */,
 				89CAE64023FB1AA200017997 /* SVGView */,
 				8975582C23E9985400622733 /* ScrollView */,
 				89F328DF23E0802A00B2CB1A /* TextView */,
@@ -227,7 +247,9 @@
 			files = (
 				89CAE64223FB1AD100017997 /* SVGViewExample.swift in Sources */,
 				8966360523E037C500143527 /* HTMLRenderingWebViewExample.swift in Sources */,
+				8924D7E22458A4CD0010C4FE /* CameraPreviewWrapperView.swift in Sources */,
 				89F328DE23E07E7E00B2CB1A /* MapView.swift in Sources */,
+				8924D7E02458A3920010C4FE /* CameraPreview.swift in Sources */,
 				8966360323E0359200143527 /* HTMLRenderingWebView.swift in Sources */,
 				89F328DC23E07A7C00B2CB1A /* MapKitExample.swift in Sources */,
 				896635EC23E0281500143527 /* AppDelegate.swift in Sources */,
@@ -236,8 +258,10 @@
 				8966360023E0298600143527 /* Menu.swift in Sources */,
 				896635F023E0281500143527 /* ContentView.swift in Sources */,
 				89CAE64823FBC55000017997 /* SVGExamples.swift in Sources */,
+				8924D7E42458A8480010C4FE /* DeviceCaptureView.swift in Sources */,
 				89F328E123E0804B00B2CB1A /* TextViewExample.swift in Sources */,
 				89F328E323E0808600B2CB1A /* TextView.swift in Sources */,
+				8924D7DE2458A0B00010C4FE /* CameraExample.swift in Sources */,
 				8975583023E9A2D500622733 /* LegacyScrollView.swift in Sources */,
 				8975583223E9A3DD00622733 /* Constants.swift in Sources */,
 				8975583423E9B01100622733 /* LegacyScrollViewExample.swift in Sources */,
@@ -378,14 +402,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"UIViewRepresentableExamples/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = MH8GQLL8BR;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = UIViewRepresentableExamples/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.uiviewrepresentable.UIViewRepresentableExamples;
+				PRODUCT_BUNDLE_IDENTIFIER = nl.dutchvirtual.UIViewRepresentableExamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -398,14 +422,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"UIViewRepresentableExamples/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = MH8GQLL8BR;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = UIViewRepresentableExamples/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.uiviewrepresentable.UIViewRepresentableExamples;
+				PRODUCT_BUNDLE_IDENTIFIER = nl.dutchvirtual.UIViewRepresentableExamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
