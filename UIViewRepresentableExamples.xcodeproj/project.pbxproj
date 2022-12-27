@@ -402,14 +402,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"UIViewRepresentableExamples/Preview Content\"";
-				DEVELOPMENT_TEAM = MH8GQLL8BR;
+				DEVELOPMENT_TEAM = 8LG5SA5X3R;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = UIViewRepresentableExamples/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = nl.dutchvirtual.UIViewRepresentableExamples;
+				PRODUCT_BUNDLE_IDENTIFIER = nl.vankuik.UIViewRepresentableExamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -422,14 +422,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"UIViewRepresentableExamples/Preview Content\"";
-				DEVELOPMENT_TEAM = MH8GQLL8BR;
+				DEVELOPMENT_TEAM = 8LG5SA5X3R;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = UIViewRepresentableExamples/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = nl.dutchvirtual.UIViewRepresentableExamples;
+				PRODUCT_BUNDLE_IDENTIFIER = nl.vankuik.UIViewRepresentableExamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -1,21 +1,10 @@
 import UIKit
 
 struct SVGExamples {
-    static var tiger: String = {
-        // GNU Affero General Public License
-        // https://commons.wikimedia.org/wiki/File:Ghostscript_Tiger.svg
-        
-        guard let asset = NSDataAsset(name: "Ghostscript_Tiger") else {
-            fatalError("Couldn't find SVG in assets")
-        }
-        
-        let data = asset.data
-        if let string = String(data: data, encoding: .utf8) {
-            return string
-        } else {
-            fatalError("Couldn't turn SVG asset into UTF8 string")
-        }
-    }()
+    // GNU Affero General Public License
+    // https://commons.wikimedia.org/wiki/File:Ghostscript_Tiger.svg
+    static var tiger: String = Self.loadAsset(assetName: "Ghostscript_Tiger")
+    static var stars: String = Self.loadAsset(assetName: "stars")
     
     static let smallExample =
     """
@@ -31,4 +20,18 @@ struct SVGExamples {
       Sorry, your browser does not support inline SVG.
     </svg>
     """
+
+    static func loadAsset(assetName: String) -> String {
+        guard let asset = NSDataAsset(name: assetName) else {
+            fatalError("Couldn't find SVG in assets, did you actually make a Data Set (not image set) in your xcassets file?")
+        }
+
+        let data = asset.data
+        if let string = String(data: data, encoding: .utf8) {
+            return string
+        } else {
+            fatalError("Couldn't turn SVG asset into UTF8 string")
+        }
+    }
+
 }
