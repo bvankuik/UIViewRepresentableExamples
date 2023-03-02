@@ -9,7 +9,7 @@ struct CameraPreview: UIViewControllerRepresentable {
         viewController.view = CameraPreviewWrapperView()
         return viewController
     }
-    
+     
     func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<CameraPreview>) {
     }
 }

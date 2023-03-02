@@ -35,6 +35,9 @@ struct Menu: View {
                 NavigationLink(destination: CameraExample()) {
                     Text("Camera Example")
                 }
+                NavigationLink(destination: ShareExample()) {
+                    Text("Share Example")
+                }
             }
             .navigationBarTitle("Available examples")
 
